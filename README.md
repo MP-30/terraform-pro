@@ -1,10 +1,10 @@
-# 🚀 Terraform AWS Certification & Hands-On Practice Labs
+# Terraform AWS Certification & Hands-On Practice Labs
 
 A practical, hands-on repository designed to learn **AWS Architecture** and **DevOps Infrastructure as Code (IaC)** by building real AWS resources using **Terraform** and testing them locally using **LocalStack**.
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 * **Infrastructure as Code:** Terraform (`tflocal`)
 * **Cloud Provider:** AWS API 
@@ -14,7 +14,7 @@ A practical, hands-on repository designed to learn **AWS Architecture** and **De
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 The project is organized into isolated, modular labs to practice specific AWS services independently without state file conflicts.
 
