@@ -14,3 +14,31 @@ resource "aws_iam_role" "my_first_role" {
     ]
   })
 }
+
+# Create an IAM group
+
+resource "aws_iam_group" "developers" {
+  name = "DeveloperGroup"
+  path = "/"
+}
+
+# Create an NEW IAM user
+resource "aws_iam_user" "aditya" {
+  name = "aditya"
+  path = "/"
+
+  tags = {
+    Environment = "Dev"
+  }
+}
+
+# Add user to the group
+resource "aws_iam_group_membership" "team" {
+  name = "developer-group-membership"
+
+  users = [
+      aws_iam_user.aditya.name,
+  ]
+
+  group = aws_iam_group.developers.name
+}

@@ -1,3 +1,5 @@
+from tokenize import group
+
 import boto3
 
 # Connect Boto3 directly to LocalStack endpoint
@@ -17,6 +19,22 @@ roles = iam.list_roles()
 print("\n--- IAM ROLES ---")
 for r in roles.get('Roles', []):
     print(f" Role: {r['RoleName']}")
+
+users = iam.list_users()
+print("\n-- IAM USERS ---")
+for u in users.get('Users' , []):
+    print(f" User: {u['UserName']}")
+
+groups = iam.list_groups()
+print("\n-- IAM USERS ---")
+for g in groups.get('Groups', []):
+    group_name = g['GroupName']
+    print(f"Group: {group_name}")
+
+    group_details = iam.get_group(GroupName=group_name)
+    members = [m['UserName'] for m in group_details.get('Users', [])]
+    print(f"   └── Members: {', '.join(members) if members else 'None'}")
+
 
 # 3. Check DynamoDB Tables
 dynamodb = boto3.client('dynamodb', endpoint_url=ENDPOINT, region_name=REGION)
