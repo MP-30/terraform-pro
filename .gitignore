@@ -1,39 +1,26 @@
-# Terraform (Matches root AND subdirectories)
-
-**/.terraform/
-**/*.tfstate
-**/*.tfstate.*
+# Terraform
+.terraform/
 *.tfstate
 *.tfstate.*
+*.tfplan
 crash.log
+crash.*.log
 
-# Terraform Variable & Override Files
-**/*.tfvars
-**/*.tfvars.json
-**/override.tf
-**/override.tf.json
-**/*_override.tf
-**/*_override.tf.json
+# Variable files (may contain secrets) – commit *.tfvars.example instead
+*.tfvars
+*.tfvars.json
 
-# CLI Configuration
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config
 .terraformrc
 terraform.rc
 
-
-# IDEs & Editors
-
+# IDEs
 .idea/
 .vscode/
 *.swp
-*.swo
-
-
-# Python & Environment
-
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-env/
-venv/
-.pytest_cache/
