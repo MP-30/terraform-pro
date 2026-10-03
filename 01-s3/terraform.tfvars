@@ -1,0 +1,1 @@
+bucket_name = "adityabhadauriya-tf-lab-20260926"

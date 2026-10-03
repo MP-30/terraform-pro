@@ -6,8 +6,8 @@
 crash.log
 crash.*.log
 
-# Variable files (may contain secrets) – commit *.tfvars.example instead
-*.tfvars
+
+
 *.tfvars.json
 
 # Override files
