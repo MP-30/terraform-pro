@@ -3,7 +3,7 @@ resource "aws_instance" "jenkins-server" {
   instance_type = "t3.micro"
   subnet_id = aws_subnet.public-subnet-1.id
   tags = {
-    Name = "jenkins-server"
+    Name = "${local.env}-jenkins-server"
   }
   key_name = "l"
   associate_public_ip_address = true
