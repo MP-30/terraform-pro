@@ -1,3 +1,6 @@
+locals {
+  env = terraform.workspace
+}
 provider "aws" {
   region = var.aws_region
 
@@ -5,6 +8,7 @@ provider "aws" {
     tags = {
       Project   = "terraform-pro"
       ManagedBy = "terraform"
+      Environment = local.env
     }
   }
 }
