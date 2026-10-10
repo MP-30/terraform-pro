@@ -44,14 +44,14 @@ resource "aws_subnet" "public-subnet-3" {
 resource "aws_internet_gateway" "development-igw" {
   vpc_id = aws_vpc.development-vpc.id
   tags = {
-    Name = "development-igw"
+    Name = "${local.env}-development-igw"
   }
 }
 
 resource "aws_route_table" "public-route-table" {
   vpc_id = aws_vpc.development-vpc.id
   tags = {
-    Name = "public-route-table"
+    Name = "${local.env}-public-route-table"
   }
 }
 
