@@ -17,7 +17,7 @@ resource "aws_subnet" "public-subnet-1" {
   availability_zone       = "${var.aws_region}a"
   map_public_ip_on_launch = true
   tags = {
-    Name = "public-subnet-${var.aws_region}a-1"
+    Name = "${local.env}-public-subnet-${var.aws_region}a-1"
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "public-subnet-2" {
   availability_zone       = "${var.aws_region}b"
   map_public_ip_on_launch = true
   tags = {
-    Name = "public-subnet-${var.aws_region}b-1"
+    Name = "${local.env}-public-subnet-${var.aws_region}b-1"
   }
 }
 
@@ -37,7 +37,7 @@ resource "aws_subnet" "public-subnet-3" {
   availability_zone       = "${var.aws_region}c"
   map_public_ip_on_launch = true
   tags = {
-    Name = "public-subnet-${var.aws_region}c-1"
+    Name = "${local.env}-public-subnet-${var.aws_region}c-1"
   }
 }
 
