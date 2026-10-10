@@ -81,7 +81,7 @@ resource "aws_subnet" "private-subnet-1" {
   cidr_block        = var.private_subnet_cidr_blocks[0]
   availability_zone = "${var.aws_region}a"
   tags = {
-    Name = "private-subnet-${var.aws_region}a-1"
+    Name = "${local.env}-private-subnet-${var.aws_region}a-1"
   }
 }
 
@@ -90,7 +90,7 @@ resource "aws_subnet" "private-subnet-2" {
   cidr_block        = var.private_subnet_cidr_blocks[1]
   availability_zone = "${var.aws_region}b"
   tags = {
-    Name = "private-subnet-${var.aws_region}b-1"
+    Name = "${local.env}-private-subnet-${var.aws_region}b-1"
   }
 }
 resource "aws_subnet" "private-subnet-3" {
@@ -98,7 +98,7 @@ resource "aws_subnet" "private-subnet-3" {
   cidr_block        = var.private_subnet_cidr_blocks[2]
   availability_zone = "${var.aws_region}c"
   tags = {
-    Name = "private-subnet-${var.aws_region}c-1"
+    Name = "${local.env}-private-subnet-${var.aws_region}c-1"
   }
 }
 # private subnet and route table
@@ -120,7 +120,7 @@ resource "aws_route_table_association" "private-route3-association" {
 resource "aws_route_table" "private-route-table" {
   vpc_id = aws_vpc.development-vpc.id
   tags = {
-    Name = "private-route-table"
+    Name = "${local.env}-private-route-table"
   }
 }
 
